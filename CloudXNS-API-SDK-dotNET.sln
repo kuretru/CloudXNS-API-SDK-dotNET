@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudXNS-API-SDK-dotNET", "CloudXNS-API-SDK-dotNET\CloudXNS-API-SDK-dotNET.csproj", "{6E9745F4-50A8-4E15-A7D3-F5B3FAC3F2DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudXNS-API-SDK-dotNET2.0", "CloudXNS-API-SDK-dotNET\CloudXNS-API-SDK-dotNET2.0.csproj", "{0E570544-BBBC-4266-852E-687083D9D927}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0E694B8A-B898-472E-A00F-E84EC34E5F05}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTest.csproj", "{9E36847D-54EC-4770-83C0-FCAFB7878131}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6E9745F4-50A8-4E15-A7D3-F5B3FAC3F2DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E9745F4-50A8-4E15-A7D3-F5B3FAC3F2DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E9745F4-50A8-4E15-A7D3-F5B3FAC3F2DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E9745F4-50A8-4E15-A7D3-F5B3FAC3F2DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E570544-BBBC-4266-852E-687083D9D927}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E570544-BBBC-4266-852E-687083D9D927}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E570544-BBBC-4266-852E-687083D9D927}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E570544-BBBC-4266-852E-687083D9D927}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E36847D-54EC-4770-83C0-FCAFB7878131}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E36847D-54EC-4770-83C0-FCAFB7878131}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E36847D-54EC-4770-83C0-FCAFB7878131}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E36847D-54EC-4770-83C0-FCAFB7878131}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

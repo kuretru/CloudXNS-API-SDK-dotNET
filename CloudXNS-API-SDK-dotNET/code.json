@@ -1,0 +1,518 @@
+﻿[
+  
+  {
+    "HTTPStatusCode": "200",
+    "Code": "1",
+    "ChineseMessage": "成功"
+  },
+  {
+    "HTTPStatusCode": "500",
+    "Code": "2",
+    "ChineseMessage": "遇到错误,请重试"
+  },
+  {
+    "HTTPStatusCode": "403",
+    "Code": "4",
+    "ChineseMessage": "域名审核尚未通过"
+  },
+  {
+    "HTTPStatusCode": "403",
+    "Code": "5",
+    "ChineseMessage": "域名已被管理员禁止"
+  },
+  {
+    "HTTPStatusCode": "403",
+    "Code": "6",
+    "ChineseMessage": "域名已被用户停用"
+  },
+  {
+    "HTTPStatusCode": "403",
+    "Code": "7",
+    "ChineseMessage": "该域名已被用户锁定,请先解锁"
+  },
+  {
+    "HTTPStatusCode": "401",
+    "Code": "21",
+    "ChineseMessage": "记录线路错误"
+  },
+  {
+    "HTTPStatusCode": "401",
+    "Code": "22",
+    "ChineseMessage": "记录类型错误"
+  },
+  {
+    "HTTPStatusCode": "401",
+    "Code": "23",
+    "ChineseMessage": "Ip 地址错误"
+  },
+  {
+    "HTTPStatusCode": "401",
+    "Code": "25",
+    "ChineseMessage": "必须填写正确格式的域名"
+  },
+  {
+    "HTTPStatusCode": "401",
+    "Code": "26",
+    "ChineseMessage": "AAAA 地址错误"
+  },
+  {
+    "HTTPStatusCode": "401",
+    "Code": "28",
+    "ChineseMessage": "SRV 记录值格式错误"
+  },
+  {
+    "HTTPStatusCode": "401",
+    "Code": "29",
+    "ChineseMessage": "TTL 值超出限制范围"
+  },
+  {
+    "HTTPStatusCode": "400",
+    "Code": "30",
+    "ChineseMessage": "该主机记录已被其他用户锁定，请稍后操作"
+  },
+  {
+    "HTTPStatusCode": "400",
+    "Code": "31",
+    "ChineseMessage": "@主机记录下不允许添加NS记录"
+  },
+  {
+    "HTTPStatusCode": "400",
+    "Code": "32",
+    "ChineseMessage": "\"@\"主机记录下不允添加许LINK记录"
+  },
+  {
+    "HTTPStatusCode": "400",
+    "Code": "33",
+    "ChineseMessage": "\"NS\" 记录不能与其他类型的记录同时存在"
+  },
+  {
+    "HTTPStatusCode": "400",
+    "Code": "34",
+    "ChineseMessage": "该记录已存在,不能重复添加"
+  },
+  {
+    "HTTPStatusCode": "400",
+    "Code": "35",
+    "ChineseMessage": "存在互斥记录"
+  },
+  {
+    "HTTPStatusCode": "401",
+    "Code": "36",
+    "ChineseMessage": "TTL 值请保持与当前主机、线路、类型的其它解析记录一致"
+  },
+  {
+    "HTTPStatusCode": "400",
+    "Code": "38",
+    "ChineseMessage": "CNAME、CNAMEX、LINK的记录值不能是本身域名"
+  },
+  {
+    "HTTPStatusCode": "400",
+    "Code": "39",
+    "ChineseMessage": "LINK 类型的记录值只允许填写CloudXNS 系统内存在的域名"
+  },
+  {
+    "HTTPStatusCode": "401",
+    "Code": "100",
+    "ChineseMessage": "主机记录名不合法"
+  },
+  {
+    "HTTPStatusCode": "401",
+    "Code": "101",
+    "ChineseMessage": "主机记录名不能以\".\"开头或结束"
+  },
+  {
+    "HTTPStatusCode": "401",
+    "Code": "102",
+    "ChineseMessage": "主机记录名不能以\"-\"开头或结束"
+  },
+  {
+    "HTTPStatusCode": "401",
+    "Code": "103",
+    "ChineseMessage": "主机记录名最多只能包含一个*"
+  },
+  {
+    "HTTPStatusCode": "401",
+    "Code": "104",
+    "ChineseMessage": "*只能放在开头"
+  },
+  {
+    "HTTPStatusCode": "401",
+    "Code": "105",
+    "ChineseMessage": "以*开头的，后边必须跟."
+  },
+  {
+    "HTTPStatusCode": "401",
+    "Code": "106",
+    "ChineseMessage": "泛域名最多只支持四级"
+  },
+  {
+    "HTTPStatusCode": "401",
+    "Code": "107",
+    "ChineseMessage": "主机记录最多只能支持64 级"
+  },
+  {
+    "HTTPStatusCode": "401",
+    "Code": "108",
+    "ChineseMessage": "主机记录长度不能超过125"
+  },
+  {
+    "HTTPStatusCode": "403",
+    "Code": "109",
+    "ChineseMessage": "记录已被系统停用,此操作被禁止"
+  },
+  {
+    "HTTPStatusCode": "403",
+    "Code": "110",
+    "ChineseMessage": "此记录已经标记为用户停用,操作被禁止"
+  },
+  {
+    "HTTPStatusCode": "401",
+    "Code": "111",
+    "ChineseMessage": "线路不能为空"
+  },
+  {
+    "HTTPStatusCode": "401",
+    "Code": "112",
+    "ChineseMessage": "记录值不能为空"
+  },
+  {
+    "HTTPStatusCode": "401",
+    "Code": "113",
+    "ChineseMessage": "TTL 不能为空"
+  },
+  {
+    "HTTPStatusCode": "401",
+    "Code": "114",
+    "ChineseMessage": "TTL，只能是整数，并且值不能小于下值"
+  },
+  {
+    "HTTPStatusCode": "401",
+    "Code": "115",
+    "ChineseMessage": "MX、AX、CNAMEX、DR301X、DR302X、DRHIDX优先级必须为1-100 整数"
+  },
+  {
+    "HTTPStatusCode": "401",
+    "Code": "116",
+    "ChineseMessage": "优先级不能为空"
+  },
+  {
+    "HTTPStatusCode": "401",
+    "Code": "117",
+    "ChineseMessage": "必须填写正确格式的域名"
+  },
+  {
+    "HTTPStatusCode": "401",
+    "Code": "118",
+    "ChineseMessage": "TXT 格式不正确"
+  },
+  {
+    "HTTPStatusCode": "401",
+    "Code": "119",
+    "ChineseMessage": "必须为正确url格式"
+  },
+  {
+    "HTTPStatusCode": "400",
+    "Code": "120",
+    "ChineseMessage": "同主机、同线路下，A 类型记录不得超过20 个，其他类型不得超过10 个"
+  },
+  {
+    "HTTPStatusCode": "400",
+    "Code": "121",
+    "ChineseMessage": "域名级别获取失败"
+  },
+  {
+    "HTTPStatusCode": "400",
+    "Code": "122",
+    "ChineseMessage": "本系统只允许一级子域名创建NS记录"
+  },
+  {
+    "HTTPStatusCode": "401",
+    "Code": "123",
+    "ChineseMessage": "记录值格式不正确"
+  },
+  {
+    "HTTPStatusCode": "400",
+    "Code": "124",
+    "ChineseMessage": "除A/AX 类型外，其他类型不能添加备IP"
+  },
+  {
+    "HTTPStatusCode": "400",
+    "Code": "125",
+    "ChineseMessage": "互斥验证未通过"
+  },
+  {
+    "HTTPStatusCode": "400",
+    "Code": "126",
+    "ChineseMessage": "已是生效状态,不需生效"
+  },
+  {
+    "HTTPStatusCode": "400",
+    "Code": "127",
+    "ChineseMessage": "参数错误或者同级线路下已存在该记录"
+  },
+  {
+    "HTTPStatusCode": "503",
+    "Code": "128",
+    "ChineseMessage": "删除备胎失败"
+  },
+  {
+    "HTTPStatusCode": "503",
+    "Code": "129",
+    "ChineseMessage": "更新备胎失败"
+  },
+  {
+    "HTTPStatusCode": "400",
+    "Code": "130",
+    "ChineseMessage": "备胎已存在"
+  },
+  {
+    "HTTPStatusCode": "403",
+    "Code": "131",
+    "ChineseMessage": "无操作zone 的权限"
+  },
+  {
+    "HTTPStatusCode": "400",
+    "Code": "132",
+    "ChineseMessage": "主备记录不能一样"
+  },
+  {
+    "HTTPStatusCode": "400",
+    "Code": "133",
+    "ChineseMessage": "其它平台NS 不限，只能填写以下cloudxns 的NS"
+  },
+  {
+    "HTTPStatusCode": "400",
+    "Code": "134",
+    "ChineseMessage": "cloudxns 的NS 不能和其它系统的混用"
+  },
+  {
+    "HTTPStatusCode": "400",
+    "Code": "135",
+    "ChineseMessage": "如果使用cloudxns 的NS，平台、级别必须一致"
+  },
+  {
+    "HTTPStatusCode": "400",
+    "Code": "136",
+    "ChineseMessage": "只允许域名级别在3-5 的使用cloudxns 的NS"
+  },
+  {
+    "HTTPStatusCode": "400",
+    "Code": "137",
+    "ChineseMessage": "泛域名下不允许添加NS 类型记录"
+  },
+  {
+    "HTTPStatusCode": "400",
+    "Code": "138",
+    "ChineseMessage": "解析记录在生效过程中，不能做宕机切换"
+  },
+  {
+    "HTTPStatusCode": "400",
+    "Code": "139",
+    "ChineseMessage": "备胎记录值在同级线路下已存在"
+  },
+  {
+    "HTTPStatusCode": "400",
+    "Code": "140",
+    "ChineseMessage": "同级线路下主备记录值不能一样"
+  },
+  {
+    "HTTPStatusCode": "400",
+    "Code": "141",
+    "ChineseMessage": "此域名下没有可监控的主机记录"
+  },
+  {
+    "HTTPStatusCode": "400",
+    "Code": "142",
+    "ChineseMessage": "没有需要添加监控的域名"
+  },
+  {
+    "HTTPStatusCode": "401",
+    "Code": "143",
+    "ChineseMessage": "备ip 格式不正确"
+  },
+  {
+    "HTTPStatusCode": "403",
+    "Code": "144",
+    "ChineseMessage": "无操作host 的权限"
+  },
+  {
+    "HTTPStatusCode": "400",
+    "Code": "145",
+    "ChineseMessage": "必须是domain@zone 的格式，例如www.test.com@test.com"
+  },
+  {
+    "HTTPStatusCode": "400",
+    "Code": "146",
+    "ChineseMessage": "LINK 记录不支持LINK 到泛域名"
+  },
+  {
+    "HTTPStatusCode": "400",
+    "Code": "147",
+    "ChineseMessage": "只能添加一个后缀变量"
+  },
+  {
+    "HTTPStatusCode": "400",
+    "Code": "148",
+    "ChineseMessage": "后缀变量名不存在,请设置后再添加"
+  },
+  {
+    "HTTPStatusCode": "400",
+    "Code": "149",
+    "ChineseMessage": "域名还在使用这个变量，请修改后再删除该变量"
+  },
+  {
+    "HTTPStatusCode": "400",
+    "Code": "150",
+    "ChineseMessage": "更新云安全加速失败"
+  },
+  {
+    "HTTPStatusCode": "400",
+    "Code": "151",
+    "ChineseMessage": "记录值最多只能支持10 级域名"
+  },
+  {
+    "HTTPStatusCode": "400",
+    "Code": "152",
+    "ChineseMessage": "域名两“.”之间的长度不能超过63"
+  },
+  {
+    "HTTPStatusCode": "401",
+    "Code": "201",
+    "ChineseMessage": "用户信息不存在"
+  },
+  {
+    "HTTPStatusCode": "401",
+    "Code": "300",
+    "ChineseMessage": "参数不正确"
+  },
+  {
+    "HTTPStatusCode": "401",
+    "Code": "302",
+    "ChineseMessage": "API Key错误"
+  },
+  {
+    "HTTPStatusCode": "503",
+    "Code": "301",
+    "ChineseMessage": "保存失败,请重试"
+  },
+  {
+    "HTTPStatusCode": "403",
+    "Code": "400",
+    "ChineseMessage": "该频道已被管理禁止,不允许更改"
+  },
+  {
+    "HTTPStatusCode": "503",
+    "Code": "510",
+    "ChineseMessage": "开启牛盾失败"
+  },
+  {
+    "HTTPStatusCode": "403",
+    "Code": "511",
+    "ChineseMessage": "只有全部接管的域名能添加云安全加速"
+  },
+  {
+    "HTTPStatusCode": "401",
+    "Code": "611",
+    "ChineseMessage": "请正确输入域名"
+  },
+  {
+    "HTTPStatusCode": "401",
+    "Code": "613",
+    "ChineseMessage": "域名格式不正确"
+  },
+  {
+    "HTTPStatusCode": "400",
+    "Code": "614",
+    "ChineseMessage": "域名级别必须范围为3-5 级"
+  },
+  {
+    "HTTPStatusCode": "400",
+    "Code": "615",
+    "ChineseMessage": "您添加的未接管域名太多，请先清理"
+  },
+  {
+    "HTTPStatusCode": "403",
+    "Code": "616",
+    "ChineseMessage": "该域名被禁止添加"
+  },
+  {
+    "HTTPStatusCode": "400",
+    "Code": "617",
+    "ChineseMessage": "域名存在"
+  },
+  {
+    "HTTPStatusCode": "401",
+    "Code": "624",
+    "ChineseMessage": "请输入正确格式的E-Mail 地址"
+  },
+  {
+    "HTTPStatusCode": "403",
+    "Code": "625",
+    "ChineseMessage": "无权使用此接口"
+  },
+  {
+    "HTTPStatusCode": "403",
+    "Code": "626",
+    "ChineseMessage": "该邮箱已被注册"
+  },
+  {
+    "HTTPStatusCode": "403",
+    "Code": "627",
+    "ChineseMessage": "操作受限"
+  },
+  {
+    "HTTPStatusCode": "403",
+    "Code": "628",
+    "ChineseMessage": "该手机号已经被其他账号占用，本系统一个手机号只能注册一次"
+  },
+  {
+    "HTTPStatusCode": "403",
+    "Code": "629",
+    "ChineseMessage": "域名备案未审核"
+  },
+  {
+    "HTTPStatusCode": "403",
+    "Code": "630",
+    "ChineseMessage": "域名备案审核中"
+  },
+  {
+    "HTTPStatusCode": "403",
+    "Code": "631",
+    "ChineseMessage": "访问IP受限"
+  },
+  {
+    "HTTPStatusCode": "403",
+    "Code": "632",
+    "ChineseMessage": "参数必须为json格式"
+  },
+  {
+    "HTTPStatusCode": "403",
+    "Code": "633",
+    "ChineseMessage": "密码长度必须为 6 到 16 位"
+  },
+  {
+    "HTTPStatusCode": "403",
+    "Code": "634",
+    "ChineseMessage": "手机号码格式错误"
+  },
+  {
+    "HTTPStatusCode": "403",
+    "Code": "635",
+    "ChineseMessage": "邮箱不存在"
+  },
+  {
+    "HTTPStatusCode": "403",
+    "Code": "636",
+    "ChineseMessage": "密码不正确"
+  },
+  {
+    "HTTPStatusCode": "403",
+    "Code": "637",
+    "ChineseMessage": "类型不正确"
+  },
+  {
+    "HTTPStatusCode": "403",
+    "Code": "638",
+    "ChineseMessage": "域名不存在"
+  }
+]
