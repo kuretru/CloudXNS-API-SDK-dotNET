@@ -7,10 +7,10 @@ namespace UnitTest
 {
     public class HostTest
     {
-        private CloudXNSAPI _api;
+        private APIManager _api;
         private bool _continue = true;
 
-        public HostTest(CloudXNSAPI api)
+        public HostTest(APIManager api)
         {
             _api = api;
             while (_continue)

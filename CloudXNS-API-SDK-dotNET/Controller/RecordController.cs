@@ -26,7 +26,7 @@ namespace Kuretru.CloudXNSAPI.Controller
         /// <returns>返回记录的总数</returns>
         public int GetCount(int domainID)
         {
-            string url = string.Format("record/{0}?host_id=0%offset=0&row_num=0", domainID);
+            string url = string.Format("record/{0}?host_id=0&offset=0&row_num=1", domainID);
             string result = _httpUtility.PostAPIRequest(url);
             APIResponse response = JsonConvert.DeserializeObject<APIResponse>(result);
             if (response.Code == 1)
@@ -44,11 +44,11 @@ namespace Kuretru.CloudXNSAPI.Controller
         /// 获取指定域名下某个主机的解析记录列表，若响应状态码不等于1，则抛出APIResponseException异常。
         /// </summary>
         /// <param name="domainID">域名ID</param>
-        /// <param name="index">分页查询，页码</param>
+        /// <param name="index">分页查询，页码(第1页为1)</param>
         /// <param name="count">分页查询，每页的记录数，最大每页为2000条</param>
         /// <param name="hostID">主机记录ID(0为查全部)</param>
         /// <returns>解析记录列表</returns>
-        public List<CloudXNSRecord> GetRecordList(int domainID, int index, int count, int hostID)
+        public List<CloudXNSRecord> GetList(int domainID, int index, int count, int hostID)
         {
             string url = string.Format("record/{0}?host_id={3}&offset={1}&row_num={2}", domainID, (index - 1) * count, count, hostID);
             string result = _httpUtility.PostAPIRequest(url);
@@ -70,12 +70,22 @@ namespace Kuretru.CloudXNSAPI.Controller
         /// 获取指定域名下存在的所有解析记录列表，若响应状态码不等于1，则抛出APIResponseException异常。
         /// </summary>
         /// <param name="domainID">域名ID</param>
-        /// <param name="index">分页查询，页码</param>
+        /// <param name="index">分页查询，页码(第1页为1)</param>
         /// <param name="count">分页查询，每页的记录数，最大每页为2000条</param>
         /// <returns>解析记录列表</returns>
-        public List<CloudXNSRecord> GetRecordList(int domainID, int index, int count)
+        public List<CloudXNSRecord> GetList(int domainID, int index, int count)
         {
-            return GetRecordList(domainID, index, count, 0);
+            return GetList(domainID, index, count, 0);
+        }
+
+        /// <summary>
+        /// 获取指定域名下前2000条解析记录，若响应状态码不等于1，则抛出APIResponseException异常。
+        /// </summary>
+        /// <param name="domainID">域名ID</param>
+        /// <returns>解析记录列表</returns>
+        public List<CloudXNSRecord> GetList(int domainID)
+        {
+            return GetList(domainID, 1, GetCount(domainID));
         }
 
         /// <summary>
@@ -86,7 +96,8 @@ namespace Kuretru.CloudXNSAPI.Controller
         public APIResponse Create(CloudXNSRecord record)
         {
             JsonSerializerSettings jsonSS = new JsonSerializerSettings();
-            jsonSS.ContractResolver = new DynamicContractResolver(new string[] { "domain_id", "Host", "Value", "Type", "MX", "line_id", "TTL" });
+            jsonSS.ContractResolver = new DynamicContractResolver(new string[] { "domain_id", "host",
+                "value", "type", "mx", "line_id", "ttl" });
             string data = JsonConvert.SerializeObject(record, jsonSS);
             string result = _httpUtility.PostAPIRequest("POST", "record", data);
             APIResponse response = JsonConvert.DeserializeObject<APIResponse>(result);
@@ -101,7 +112,7 @@ namespace Kuretru.CloudXNSAPI.Controller
         public APIResponse CreateSpare(CloudXNSRecord record)
         {
             JsonSerializerSettings jsonSS = new JsonSerializerSettings();
-            jsonSS.ContractResolver = new DynamicContractResolver(new string[] { "domain_id", "HostID", "RecordID", "Value" });
+            jsonSS.ContractResolver = new DynamicContractResolver(new string[] { "domain_id", "host_id", "record_id", "value" });
             string data = JsonConvert.SerializeObject(record, jsonSS);
             string result = _httpUtility.PostAPIRequest("POST", "record/spare", data);
             APIResponse response = JsonConvert.DeserializeObject<APIResponse>(result);
@@ -119,7 +130,7 @@ namespace Kuretru.CloudXNSAPI.Controller
             jsonSS.ContractResolver = new DynamicContractResolver(new string[] { "domain_id", "host", "value",
                 "type", "mx", "ttl", "line_id" });
             string data = JsonConvert.SerializeObject(record, jsonSS);
-            string result = _httpUtility.PostAPIRequest("POST", string.Format("record/{0}", record.RecordID), data);
+            string result = _httpUtility.PostAPIRequest("PUT", string.Format("record/{0}", record.RecordID), data);
             APIResponse response = JsonConvert.DeserializeObject<APIResponse>(result);
             if (response.Code == 1)
             {
@@ -144,10 +155,6 @@ namespace Kuretru.CloudXNSAPI.Controller
         {
             string result = _httpUtility.PostAPIRequest("DELETE", string.Format("record/{0}/{1}", recordID, domainID), null);
             APIResponse response = JsonConvert.DeserializeObject<APIResponse>(result);
-            if (string.IsNullOrEmpty(result))
-            {
-                response = new APIResponse("域名被用户锁定");
-            }
             return response;
         }
 
@@ -165,10 +172,6 @@ namespace Kuretru.CloudXNSAPI.Controller
             jobject.Add(new JProperty("status", status));
             string result = _httpUtility.PostAPIRequest("POST", "record/pause", jobject.ToString());
             APIResponse response = JsonConvert.DeserializeObject<APIResponse>(result);
-            if (string.IsNullOrEmpty(result))
-            {
-                response = new APIResponse("域名被用户锁定");
-            }
             return response;
         }
 
@@ -184,12 +187,8 @@ namespace Kuretru.CloudXNSAPI.Controller
             JObject jobject = new JObject(new JProperty("id", recordID));
             jobject.Add(new JProperty("domain_id", domainID));
             jobject.Add(new JProperty("status", status));
-            string result = _httpUtility.PostAPIRequest("POST", "record/id", jobject.ToString());
+            string result = _httpUtility.PostAPIRequest("POST", "record/ai", jobject.ToString());
             APIResponse response = JsonConvert.DeserializeObject<APIResponse>(result);
-            if (string.IsNullOrEmpty(result))
-            {
-                response = new APIResponse("域名被用户锁定");
-            }
             return response;
         }
 
@@ -210,10 +209,6 @@ namespace Kuretru.CloudXNSAPI.Controller
             jobject.Add(new JProperty("line_id", lineID));
             string result = _httpUtility.PostAPIRequest("POST", "ddns", jobject.ToString());
             APIResponse response = JsonConvert.DeserializeObject<APIResponse>(result);
-            if (string.IsNullOrEmpty(result))
-            {
-                response = new APIResponse("域名被用户锁定");
-            }
             return response;
         }
 

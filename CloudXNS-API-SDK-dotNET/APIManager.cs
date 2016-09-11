@@ -8,7 +8,7 @@ namespace Kuretru.CloudXNSAPI
     /// <summary>
     /// CloudXNS API SDK
     /// </summary>
-    public class CloudXNSAPI
+    public class APIManager
     {
         private HttpUtility _httpUtility;
         private DomainController _domainController;
@@ -65,7 +65,7 @@ namespace Kuretru.CloudXNSAPI
         /// </summary>
         /// <param name="apiKey">API Key</param>
         /// <param name="secretKey">Secret Key</param>
-        public CloudXNSAPI(string apiKey, string secretKey)
+        public APIManager(string apiKey, string secretKey)
         {
             APIConfiguration configutaion = ConfigurationController.LoadConfigutaion();
             configutaion.APIKey = apiKey;

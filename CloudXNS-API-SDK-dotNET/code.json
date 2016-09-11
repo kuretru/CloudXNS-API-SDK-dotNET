@@ -8,7 +8,7 @@
   {
     "HTTPStatusCode": "500",
     "Code": "2",
-    "ChineseMessage": "遇到错误,请重试"
+    "ChineseMessage": "遇到错误,请重试(看看是不是域名被锁定了！T T)"
   },
   {
     "HTTPStatusCode": "403",

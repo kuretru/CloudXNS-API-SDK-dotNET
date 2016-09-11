@@ -44,7 +44,7 @@ namespace Kuretru.CloudXNSAPI.Controller
         /// 获取指定域名下存在的主机记录列表，若响应状态码不等于1，则抛出APIResponseException异常。
         /// </summary>
         /// <param name="domainID">域名ID</param>
-        /// <param name="index">分页查询，页码</param>
+        /// <param name="index">分页查询，页码(第1页为1)</param>
         /// <param name="count">分页查询，每页的记录数，最大每页为2000条</param>
         /// <returns>主机记录列表</returns>
         public List<CloudXNSHost> GetList(int domainID, int index, int count)
@@ -63,6 +63,16 @@ namespace Kuretru.CloudXNSAPI.Controller
             {
                 throw new APIResponseException(response);
             }
+        }
+
+        /// <summary>
+        /// 获取指定域名下前2000条主机记录列表，若响应状态码不等于1，则抛出APIResponseException异常。
+        /// </summary>
+        /// <param name="domainID">域名ID</param>
+        /// <returns>主机记录列表</returns>
+        public List<CloudXNSHost> GetList(int domainID)
+        {
+            return GetList(domainID, 1, GetCount(domainID));
         }
 
         /// <summary>

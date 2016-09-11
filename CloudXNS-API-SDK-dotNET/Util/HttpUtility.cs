@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Text;
 using Kuretru.CloudXNSAPI.Model;
 
 namespace Kuretru.CloudXNSAPI.Util
@@ -96,6 +93,34 @@ namespace Kuretru.CloudXNSAPI.Util
             using (StreamReader sr = new StreamReader(response.GetResponseStream()))
             {
                 result = sr.ReadToEnd();
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// 通过IP138服务，自动获取本机公网IP
+        /// </summary>
+        /// <returns>IP地址(如202.101.172.35)</returns>
+        public static string GetPublicIP()
+        {
+            string result = string.Empty;
+            try
+            {
+                HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create("http://www.ip138.com/ips138.asp");
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                string text = string.Empty;
+                using (StreamReader sr = new StreamReader(response.GetResponseStream()))
+                {
+                    text = sr.ReadToEnd();
+                }
+                
+                int start = text.IndexOf("您的IP地址是：[") + 9;
+                int end = text.IndexOf("]", start);
+                result = text.Substring(start, end - start);
+            }
+            catch
+            {
+
             }
             return result;
         }

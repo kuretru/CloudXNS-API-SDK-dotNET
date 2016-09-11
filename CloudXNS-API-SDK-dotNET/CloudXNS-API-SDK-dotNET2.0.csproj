@@ -39,7 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CloudXNSAPI.cs" />
+    <Compile Include="APIManager.cs" />
     <Compile Include="Controller\ConfigurationController.cs" />
     <Compile Include="Controller\DomainController.cs" />
     <Compile Include="Controller\DynamicContractResolver.cs" />

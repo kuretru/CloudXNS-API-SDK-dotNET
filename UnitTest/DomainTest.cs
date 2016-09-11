@@ -7,10 +7,10 @@ namespace UnitTest
 {
     public class DomainTest
     {
-        private CloudXNSAPI _api;
+        private APIManager _api;
         private bool _continue = true;
 
-        public DomainTest(CloudXNSAPI api)
+        public DomainTest(APIManager api)
         {
             _api = api;
             while (_continue)

@@ -8,10 +8,10 @@ namespace UnitTest
 {
     public class InformationTest
     {
-        private CloudXNSAPI _api;
+        private APIManager _api;
         private bool _continue = true;
 
-        public InformationTest(CloudXNSAPI api)
+        public InformationTest(APIManager api)
         {
             _api = api;
             while (_continue)
@@ -86,7 +86,7 @@ namespace UnitTest
             Console.ReadLine();
         }
 
-        private void CloudXNSLineProcessor(List<CloudXNSLine> list,ref int level)
+        public static void CloudXNSLineProcessor(List<CloudXNSLine> list,ref int level)
         {
             for (int i = 0; i < list.Count; i++)
             {
@@ -97,7 +97,7 @@ namespace UnitTest
                     text += " ";
                 }
                 text += line;
-                Console.WriteLine(text);
+                Console.WriteLine("{0}\t{1}", text, line.ID);
                 if (line.Children != null)
                 {
                     level++;

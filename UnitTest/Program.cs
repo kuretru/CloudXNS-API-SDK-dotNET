@@ -8,7 +8,7 @@ namespace UnitTest
 {
     class Program
     {
-        private static CloudXNSAPI _api;
+        private static APIManager _api;
 
         static void Main(string[] args)
         {
@@ -76,23 +76,17 @@ namespace UnitTest
         {
             Console.Clear();
             Console.WriteLine("输入你的API Key");
-            //string apiKey = Console.ReadLine();
-            string apiKey = "db468694f7f429d15a21d73f095030fc";
+            string apiKey = Console.ReadLine();
             Console.WriteLine("输入你的Secret Key");
-            //string secretKey = Console.ReadLine();
-            string secretKey = "8246c667ed2fe08c";
-            Kuretru.CloudXNSAPI.Model.APIResponse response = CloudXNSAPI.Login(apiKey, secretKey);
+            string secretKey = Console.ReadLine();
+            Kuretru.CloudXNSAPI.Model.APIResponse response = APIManager.Login(apiKey, secretKey);
             Console.WriteLine(response);
-            Console.ReadLine();
             if (response.Code == 1)
             {
-                _api = new CloudXNSAPI(apiKey, secretKey);
+                _api = new APIManager(apiKey, secretKey);
+                Console.WriteLine("按任意键继续...");
             }
-        }
-
-        static object GetUserInput(Type t, string title)
-        {
-            return "";
+            Console.ReadLine();
         }
     }
 }
