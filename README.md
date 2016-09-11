@@ -2,7 +2,7 @@
 使用.NET封装的CloudXNS官方API接口，方便使用，欢迎提Issues。  
 [![version](https://img.shields.io/badge/version-v1.0-red.svg)](https://github.com/kuretru/CloudXNS-API-SDK-dotNET/releases/latest)
 [![Build](https://img.shields.io/badge/build-20160912-brightgreen.svg)](https://github.com/kuretru/CloudXNS-API-SDK-dotNET/releases/latest)
-[![License](https://img.shields.io/badge/License-GPLV3-orange.svg)](LICENSE.md) ![nuget](https://img.shields.io/badge/nuget-v3.5.0-blue.svg)
+[![License](https://img.shields.io/badge/License-GPLV3-orange.svg)](LICENSE) ![nuget](https://img.shields.io/badge/nuget-v3.5.0-blue.svg)
 
 ### 环境要求
 * 使用 CloudXNS 官方 API 接口
